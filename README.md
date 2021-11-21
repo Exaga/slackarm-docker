@@ -4,7 +4,7 @@ Using the official Slackware ARM miniroot filesystem from http://ftp.arm.slackwa
 
 ### Clone the slackarm-docker repo
 ```
-git clone https://github.com/Exaga/slackarm-docker 
+git clone https://github.com/Exaga/slackarm-docker
 ```
 ### Make a Docker repository directory
 ```
@@ -28,11 +28,11 @@ wget -cv http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/miniroo
 ```
 docker build -t slackwarearm-current:latest slackwarearm-current/ 
 ```
-### To LIST Docker image(s)
+### To list Docker image(s)
 ```
 docker image ls
 ```
-### Run Docker image using "--name slackarm-docker" ID tag and running bash login
+### To run Docker image using "--name slackarm-docker" ID tag and running bash login
 ```
 docker run -t -i --name slackarm-docker --privileged slackwarearm-current:latest bash -l
 ```

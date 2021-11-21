@@ -5,3 +5,4 @@ MAINTAINER SARPi Project [https://sarpi.penthux.net]
 ADD slackarm-current-miniroot_08Oct21.tar.xz /
 RUN echo -e "# Set Docker PS1\nPS1='\\u@dockstar:\\w\\$ '" >> /etc/profile
 CMD ["/bin/bash"]
+
