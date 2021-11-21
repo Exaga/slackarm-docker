@@ -28,11 +28,11 @@ wget -cv http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/miniroo
 ```
 docker build -t slackwarearm-current:latest slackwarearm-current/ 
 ```
-### To list Docker image(s)
+### To LIST Docker image(s)
 ```
 docker image ls
 ```
-### To run Docker image using "--name slackarm-docker" ID tag and running bash login
+### To RUN Docker image using "--name slackarm-docker" ID tag and login to container
 ```
 docker run -t -i --name slackarm-docker --privileged slackwarearm-current:latest bash -l
 ```
@@ -61,10 +61,6 @@ docker container start slackarm-docker
 ```
 docker exec -ti slackarm-docker bash -l
 ```
-### To STOP the container if it is running
-```
-docker container stop slackarm-docker
-```
 ### To detach from the running container
 
 <kbd>CTRL</kbd> + <kbd>P</kbd> , <kbd>CTRL</kbd> + <kbd>Q</kbd> 
@@ -72,5 +68,9 @@ docker container stop slackarm-docker
 ### To attach to the running comtainer 
 ```
 docker attach slackarm-docker
+```
+### To STOP the container if it is running
+```
+docker container stop slackarm-docker
 ```
 
