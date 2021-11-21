@@ -30,7 +30,7 @@ root@dockstar:/# exit
 ```
 ~$ docker container start slackarm-docker
 ```
-### To attach to the container if it is running and login
+### To attach to the container and login
 ```
 ~$ docker exec -ti slackarm-docker bash -l
 ```
