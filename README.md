@@ -1,55 +1,67 @@
 ## Run Slackware ARM miniroot filesystem in a Docker container
 
-Using the Slackware ARM miniroot filesystem from http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/ it's possible to run Slackware ARM OS in a Docker container. This is useful for test-driving the system or trying it out, running processes for testing and development, etc.
+Using the official Slackware ARM miniroot filesystem from http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/ it's possible to run Slackware ARM OS in a Docker container. This is useful for test-driving the system or trying it out, running processes for testing and development, etc. You should already have Docker installed and running on a host system. Run the Slackware ARM miniroot filesystem in a container as a normal limited user and **NOT** 'root' user.
 
-### Make a Docker repository directory
+#### Clone the slackarm-docker repo
 ```
-~$ mkdir -p slackwarearm-current
+ git clone https://github.com/Exaga/slackarm-docker 
 ```
-### Download latest Slackware ARM -current miniroot tarball
+#### Make a Docker repository directory
 ```
-~$ wget -cv http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/slackarm-current-miniroot_08Oct21.tar.xz -P slackwarearm-current/ 
+ mkdir -p slackarm-docker/slackwarearm-current
+ cd slackarm-docker
 ```
-### Build Docker image
+Copy the Dockerfile into this directory.
 ```
-~$ docker build -t slackwarearm-current:latest slackwarearm-current/ 
+ cp -avr Dockerfile slackwarearm-current/
 ```
-### To LIST Docker image(s)
+
+#### Download latest Slackware ARM -current miniroot tarball
 ```
-~$ docker image ls
+ wget -cv http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/slackarm-current-miniroot_08Oct21.tar.xz -P slackwarearm-current/ 
 ```
-### Run Docker image using "--name slackarm-docker" ID tag and running bash login
+**Check for updates - 08Oct21 was latest version at time of writing this.**
+
+#### Build Docker image
 ```
-~$ docker run -t -i --name slackarm-docker --privileged slackwarearm-current:latest bash -l
+ docker build -t slackwarearm-current:latest slackwarearm-current/ 
 ```
-### NOW IN CONTAINER #
+#### To LIST Docker image(s)
 ```
-root@dockstar:/# slackpkg update
-root@dockstar:/# slackpkg install slackware
+ docker image ls
+```
+#### Run Docker image using "--name slackarm-docker" ID tag and running bash login
+```
+ docker run -t -i --name slackarm-docker --privileged slackwarearm-current:latest bash -l
+```
+#### NOW IN CONTAINER #
+```
+root@dockstar:/# cat /etc/os-version
+root@dockstar:/# cat /etc/slackware-version
 root@dockstar:/# exit
 ```
-### To LIST all Docker containers - active or otherwise
+#### To LIST all Docker containers - active or otherwise
 ```
-~$ docker container ls -a
+ docker container ls -a
 ```
-### To START the container if it isn't running
+#### To START the container if it isn't running
 ```
-~$ docker container start slackarm-docker
+ docker container start slackarm-docker
 ```
-### To attach to the container and login
+#### To attach to the container and login
 ```
-~$ docker exec -ti slackarm-docker bash -l
+ docker exec -ti slackarm-docker bash -l
 ```
-### To STOP the container if it is running
+#### To STOP the container if it is running
 ```
-~$ docker container stop slackarm-docker
+ docker container stop slackarm-docker
 ```
-### To detach from a running container
+#### To detach from the running container
 ```
-CTRL+P,CTRL+Q - key sequence
+<kbd>CTRL</kbd>+<kbd>P</kbd> , <kbd>CTRL</kbd>+<kbd>Q</kbd> 
 ```
-### To attach to a running comtainer 
+#### To attach to the running comtainer 
 ```
-~$ docker attach [CONTAINER_NAME]
+ docker attach slackarm-docker
 ```
 
