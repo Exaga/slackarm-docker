@@ -1,5 +1,11 @@
-# Run Slackware ARM miniroot filesystem in a Docker container
+## Run Slackware ARM miniroot filesystem in a Docker container
 
+Using the Slackware ARM miniroot filesystem from http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/ it's possible to run Slackware ARM OS in a Docker container. This is useful for test-driving the system or trying it out, running processes for testing and development, etc.
+
+### Make a Docker repository directory
+```
+~$ mkdir -p slackwarearm-current
+```
 ### Download latest Slackware ARM -current miniroot tarball
 ```
 ~$ wget -cv http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/slackarm-current-miniroot_08Oct21.tar.xz -P slackwarearm-current/ 
