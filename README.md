@@ -65,7 +65,7 @@ docker exec -ti slackarm-docker bash -l
 
 <kbd>CTRL</kbd> + <kbd>P</kbd> , <kbd>CTRL</kbd> + <kbd>Q</kbd> 
 
-### To attach to the running comtainer 
+### To attach to the running container 
 ```
 docker attach slackarm-docker
 ```
