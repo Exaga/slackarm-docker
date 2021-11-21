@@ -17,11 +17,11 @@ cp -avr Dockerfile slackwarearm-current/
 ```
 
 ### Download latest Slackware ARM -current miniroot tarball
+**Check for updates - 08Oct21 was latest version at time of writing this.**  
+If updates exist or you want to use another Slackware ARM miniroot fs tarball then the Dockerfile ADD line needs editing with the correct filename!
 ```
 wget -cv http://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/roots/slackarm-current-miniroot_08Oct21.tar.xz -P slackwarearm-current/ 
 ```
-**Check for updates - 08Oct21 was latest version at time of writing this.**
-If updates exist or you want to use another Slackware ARM miniroot fs tarball then the Dockerfile ADD line needs editing with the correct filename!
 
 ### Build Docker image
 ```
