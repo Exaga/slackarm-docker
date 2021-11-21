@@ -34,11 +34,18 @@ docker image ls
 ```
 docker run -t -i --name slackarm-docker --privileged slackwarearm-current:latest bash -l
 ```
-### NOW IN CONTAINER #
+### IN CONTAINER 
 ```
 root@dockstar:/# cat /etc/os-version
 root@dockstar:/# cat /etc/slackware-version
-root@dockstar:/# exit
+```
+### To detach from the running container
+
+<kbd>CTRL</kbd> + <kbd>P</kbd> , <kbd>CTRL</kbd> + <kbd>Q</kbd> 
+
+### To attach to the running comtainer 
+```
+docker attach slackarm-docker
 ```
 ### To LIST all Docker containers - active or otherwise
 ```
