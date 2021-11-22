@@ -61,14 +61,6 @@ docker container start slackarm-docker
 ```
 docker exec -ti slackarm-docker bash -l
 ```
-### To detach from the running container
-
-<kbd>CTRL</kbd> + <kbd>P</kbd> , <kbd>CTRL</kbd> + <kbd>Q</kbd> 
-
-### To attach to the running container 
-```
-docker attach slackarm-docker
-```
 ### To STOP the container if it is running
 ```
 docker container stop slackarm-docker
